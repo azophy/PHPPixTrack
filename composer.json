@@ -1,0 +1,13 @@
+{
+    "name": "azophy/phppixtracker",
+    "description": "Slightly better PHP based pixel tracker for email",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Abdurrahman Shofy Adianto",
+            "email": "abdurrahman@adianto.id"
+        }
+    ],
+    "require": {}
+}
