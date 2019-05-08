@@ -1,0 +1,13 @@
+{
+  "name": "PHPPixTracker",
+  "description": "Slightly better PHP based pixel tracker for email",
+  "keywords": [
+    "email",
+    "PHP",
+    "tracker",
+    "analytic"
+  ],
+  "website": "https://github.com/azophy/PHPPixTracker/",
+  "repository": "https://github.com/azophy/PHPPixTracker/",
+  "success_url": "/"
+}

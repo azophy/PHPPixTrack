@@ -102,34 +102,47 @@ function index_page() {
             break;
     }
 ?>
-<h1>PHPPixTracker</h1>
-url for pixel tracker : <?= sprintf("http://%s%s?action=pixel&tags=your-own-tags",$_SERVER[HTTP_HOST], strtok($_SERVER[REQUEST_URI],'?') ) ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <h1>PHPPixTracker</h1>
+    embed PHPPixTracker code :<br/>
+    <textarea style="width:100%"><img style="display:hidden;width:1px;height:1px" 
+src="<?= sprintf("http://%s%s?action=pixel&tags=your-own-tags",$_SERVER[HTTP_HOST], strtok($_SERVER[REQUEST_URI],'?') ) ?>" />
+    </textarea>
 
-<h2>Latest pixel tracker log</h2>
-<?php //print_r($current_log); ?>
-<style>
-table {border:1px solid #000; border-collapse: collapse;}
-table tr, table td, table th {border:1px solid #000; border-collapse: collapse;}
-</style>
-<table style=>
-    <tr>
-        <th>No</th>
-        <th>Access Time</th>
-        <th>IP</th>
-        <th>Optional Tag</th>
-        <th>User Agent</th>
-    </tr>
-    <?php foreach ($current_log as $row => $line): ?>
-    <tr>
-        <td><?=$row+1?></td>
-        <td><?=$line[0]?></td>
-        <td><?=$line[2]?></td>
-        <td><?=$line[6]?></td>
-        <td><?=$line[4]?></td>
-    </tr>
-    <?php endforeach; ?>
-</table>
-<?= (empty($current_log)) ? "<strong>There are no access yet</strong>" : '' ?>
+    <h2>Latest pixel tracker log</h2>
+    <?php //print_r($current_log); ?>
+    <style>
+    table {border:1px solid #000; border-collapse: collapse;}
+    table tr, table td, table th {border:1px solid #000; border-collapse: collapse;}
+    </style>
+    <table style=>
+        <tr>
+            <th>No</th>
+            <th>Access Time</th>
+            <th>IP</th>
+            <th>Optional Tag</th>
+            <th>User Agent</th>
+        </tr>
+        <?php foreach ($current_log as $row => $line): ?>
+        <tr>
+            <td><?=$row+1?></td>
+            <td><?=$line[0]?></td>
+            <td><?=$line[2]?></td>
+            <td><?=$line[6]?></td>
+            <td><?=$line[4]?></td>
+        </tr>
+        <?php endforeach; ?>
+    </table>
+    <?= (empty($current_log)) ? "<strong>There are no access yet</strong>" : '' ?>
+    
+</body>
+</html>
 <?php
 }
 
